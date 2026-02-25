@@ -6,10 +6,7 @@
     <title>Bocaditos & Buffet | Helga López</title>
     <link rel="icon" href="https://i.pinimg.com/736x/d5/12/0d/d5120d05340771cdd16deaf372735866.jpg">
     
-    <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Google Fonts (elegantes y premium) -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
     
     <style>
@@ -103,18 +100,44 @@
             50% { transform: translateY(-15px); }
         }
 
-        .gallery-img {
-            transition: all 0.4s ease;
+        .price {
+            font-size: 1.85rem;
+            line-height: 1;
+            font-weight: 700;
+        }
+
+        .mobile-card {
+            transition: all 0.3s ease;
         }
         
-        .gallery-img:hover {
-            transform: scale(1.08);
-            filter: brightness(1.1);
+        .mobile-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+        }
+
+        .extras-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
         }
 
         html {
             scroll-behavior: smooth;
         }
+    @keyframes bounce-slow {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(4px); }
+}
+.animate-bounce-slow {
+    animation: bounce-slow 2.5s infinite ease-in-out;
+}
+.animate-pulse-slow {
+    animation: pulse 3s infinite ease-in-out;
+}
+@keyframes pulse {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+}
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800 overflow-x-hidden">
@@ -125,15 +148,14 @@
             <div class="flex justify-between items-center h-20">
                 <!-- Logo -->
                 <div class="flex items-center gap-3">
-                    <img src="https://i.pinimg.com/736x/d5/12/0d/d5120d05340771cdd16deaf372735866.jpg" 
-                         alt="Helga López" 
+                    <img src="https://i.pinimg.com/736x/d5/12/0d/d5120d05340771cdd16deaf372735866.jpg"
+                         alt="Helga López"
                          class="w-12 h-12 rounded-2xl object-cover border-2 border-amber-500">
                     <div>
                         <span class="heading-font text-2xl font-bold tracking-tight text-gray-900">Helga López</span>
                         <p class="text-xs text-amber-600 -mt-1 font-medium">Bocaditos &amp; Buffet</p>
                     </div>
                 </div>
-
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center gap-8 text-sm font-medium">
                     <a href="#servicios" class="nav-link text-gray-700 hover:text-amber-600">Servicios</a>
@@ -141,9 +163,8 @@
                     <a href="#salados" class="nav-link text-gray-700 hover:text-amber-600">Salados</a>
                     <a href="#extras" class="nav-link text-gray-700 hover:text-amber-600">Extras</a>
                 </div>
-
                 <div class="hidden md:block">
-                    <a href="https://wa.me/51907444411?text=%C2%A1Hola%20Sra.%20Helga!%20Quisiera%20hacer%20un%20pedido" 
+                    <a href="https://wa.me/51907444411?text=%C2%A1Hola%20Sra.%20Helga!%20Quisiera%20hacer%20un%20pedido"
                        target="_blank"
                        class="bg-amber-500 hover:bg-amber-600 text-white px-6 py-3 rounded-2xl font-semibold transition flex items-center gap-2">
                         <span>Pedir por WhatsApp</span>
@@ -152,7 +173,6 @@
                         </svg>
                     </a>
                 </div>
-
                 <!-- Mobile Hamburger -->
                 <button id="mobile-menu-button"
                         class="md:hidden w-11 h-11 flex items-center justify-center text-2xl">
@@ -160,7 +180,6 @@
                 </button>
             </div>
         </div>
-
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
             <div class="px-6 py-8 flex flex-col gap-6 text-lg font-medium">
@@ -168,7 +187,7 @@
                 <a href="#dulces" class="mobile-link">Bocaditos Dulces</a>
                 <a href="#salados" class="mobile-link">Bocaditos Salados</a>
                 <a href="#extras" class="mobile-link">Extras</a>
-                <a href="https://wa.me/51907444411?text=%C2%A1Hola%20Sra.%20Helga!%20Quisiera%20hacer%20un%20pedido" 
+                <a href="https://wa.me/51907444411?text=%C2%A1Hola%20Sra.%20Helga!%20Quisiera%20hacer%20un%20pedido"
                    target="_blank"
                    class="mt-4 bg-amber-500 text-white py-4 rounded-2xl text-center font-semibold">
                     Pedir por WhatsApp
@@ -177,45 +196,55 @@
         </div>
     </nav>
 
-    <!-- HERO -->
-    <header class="hero-bg h-screen flex items-center text-white">
-        <div class="max-w-5xl mx-auto px-6 text-center pt-20">
-            <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-6 py-2 rounded-3xl mb-6">
-                <span class="text-amber-300">★</span>
-                <span class="text-sm font-medium tracking-widest">TARAPOTO • PERÚ</span>
-            </div>
-            
-            <h1 class="heading-font text-6xl md:text-7xl font-bold tracking-tighter leading-none mb-4">
-                Bocaditos &amp;<br>Buffet Premium
-            </h1>
-            <p class="text-2xl md:text-3xl opacity-90 mb-2">Sabores que enamoran</p>
-            <p class="text-xl opacity-80 max-w-md mx-auto">By Helga López • Hechos con amor para tus momentos especiales</p>
-            
-            <div class="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#dulces" 
-                   class="bg-white text-gray-900 hover:bg-amber-100 font-semibold text-lg px-10 py-5 rounded-3xl transition inline-flex items-center justify-center gap-3">
-                    Ver nuestro catálogo
-                </a>
-                <a href="https://wa.me/51907444411?text=%C2%A1Hola%20Sra.%20Helga!%20Deseo%20información%20sobre%20bocaditos" 
-                   target="_blank"
-                   class="border-2 border-white hover:bg-white hover:text-gray-900 font-semibold text-lg px-10 py-5 rounded-3xl transition inline-flex items-center justify-center gap-3">
-                    Reservar ahora
-                </a>
-            </div>
-            
-            <div class="mt-16 text-sm opacity-70 flex items-center justify-center gap-8">
-                <div>✅ Lo mejor de lo mejor</div>
-                <div>✅ Entrega a domicilio</div>
-                <div>✅ Personalizados</div>
-            </div>
+<!-- HERO - Versión final corregida -->
+<header class="hero-bg min-h-screen flex items-center text-white relative">
+    <div class="max-w-5xl mx-auto px-5 sm:px-6 text-center py-20 sm:py-24">
+        <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-5 py-2 rounded-3xl mb-8">
+            <span class="text-amber-300">★</span>
+            <span class="text-sm font-medium tracking-widest">TARAPOTO • PERÚ</span>
         </div>
         
-        <!-- Scroll indicator -->
-        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center">
-            <span class="text-xs tracking-widest opacity-60 mb-2">DESLIZA</span>
-            <div class="w-px h-12 bg-white/40"></div>
+        <h1 class="heading-font text-5xl sm:text-6xl md:text-7xl font-bold tracking-tighter leading-tight mb-6">
+            Bocaditos &amp;<br>Buffet Premium
+        </h1>
+        <p class="text-xl sm:text-2xl md:text-3xl opacity-90 mb-4">Sabores que enamoran</p>
+        <p class="text-lg sm:text-xl opacity-80 max-w-lg mx-auto mb-10">
+            By Helga López • Hechos con amor para tus momentos especiales
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-5 justify-center items-center mt-8">
+            <a href="#dulces"
+               class="bg-white text-gray-900 hover:bg-amber-50 font-semibold text-lg px-10 py-5 rounded-3xl transition shadow-lg w-full sm:w-auto">
+                Ver nuestro catálogo
+            </a>
+            <a href="https://wa.me/51907444411?text=%C2%A1Hola%20Sra.%20Helga!%20Deseo%20información%20sobre%20bocaditos"
+               target="_blank"
+               class="border-2 border-white hover:bg-white hover:text-gray-900 font-semibold text-lg px-10 py-5 rounded-3xl transition w-full sm:w-auto">
+                Reservar ahora
+            </a>
         </div>
-    </header>
+        
+        <div class="mt-12 flex flex-wrap justify-center gap-x-8 gap-y-4 text-base sm:text-lg opacity-90">
+            <div class="flex items-center gap-2 whitespace-nowrap">
+                <span class="text-green-400 text-2xl">✔</span> Lo mejor de lo mejor
+            </div>
+            <div class="flex items-center gap-2 whitespace-nowrap">
+                <span class="text-green-400 text-2xl">✔</span> Entrega a domicilio
+            </div>
+            <div class="flex items-center gap-2 whitespace-nowrap">
+                <span class="text-green-400 text-2xl">✔</span> Personalizados
+            </div>
+        </div>
+    </div>
+    
+    <!-- Indicador de scroll - más abajo, discreto y con animación -->
+    <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center opacity-60 pointer-events-none">
+        <span class="text-xs tracking-widest mb-1.5">DESLIZA</span>
+        <div class="w-5 h-8 border-2 border-white rounded-full flex items-center justify-center animate-pulse-slow">
+            <div class="w-1 h-2 bg-white rounded-full animate-bounce-slow"></div>
+        </div>
+    </div>
+</header>
 
     <!-- SERVICIOS -->
     <section id="servicios" class="max-w-7xl mx-auto px-6 py-24">
@@ -227,7 +256,7 @@
         <div class="grid md:grid-cols-3 gap-8">
             <!-- Card 1 -->
             <div class="bg-white rounded-3xl overflow-hidden card-hover">
-                <div class="h-56 bg-cover bg-center" 
+                <div class="h-56 bg-cover bg-center"
                      style="background-image: url('https://i.pinimg.com/736x/84/17/0e/84170ea1e18c80b5a84a84caddf0cdaf.jpg')"></div>
                 <div class="p-8">
                     <h3 class="text-2xl font-semibold mb-3">Buffets Elegantes</h3>
@@ -242,7 +271,7 @@
             
             <!-- Card 2 -->
             <div class="bg-white rounded-3xl overflow-hidden card-hover">
-                <div class="h-56 bg-cover bg-center" 
+                <div class="h-56 bg-cover bg-center"
                      style="background-image: url('https://i.pinimg.com/736x/6a/3a/ae/6a3aaeabed0e732476cc38ed602499b6.jpg')"></div>
                 <div class="p-8">
                     <h3 class="text-2xl font-semibold mb-3">Bocaditos Dulces</h3>
@@ -257,7 +286,7 @@
             
             <!-- Card 3 -->
             <div class="bg-white rounded-3xl overflow-hidden card-hover">
-                <div class="h-56 bg-cover bg-center" 
+                <div class="h-56 bg-cover bg-center"
                      style="background-image: url('https://i.pinimg.com/736x/db/fd/ea/dbfdeac8b3a5721388a0da7199fd86b6.jpg')"></div>
                 <div class="p-8">
                     <h3 class="text-2xl font-semibold mb-3">Bocaditos Salados</h3>
@@ -277,7 +306,8 @@
                 <p class="text-gray-500 mt-3">Precios por bandeja • Mínimo 25 unidades</p>
             </div>
             
-            <div class="overflow-x-auto rounded-3xl shadow-xl">
+            <!-- Tabla Desktop -->
+            <div class="hidden md:block overflow-x-auto rounded-3xl shadow-xl">
                 <table class="w-full table-style text-base">
                     <thead>
                         <tr>
@@ -300,6 +330,82 @@
                     </tbody>
                 </table>
             </div>
+
+            <!-- Tarjetas Móviles Dulces -->
+            <div class="md:hidden space-y-8">
+                <div class="mobile-card bg-white rounded-3xl p-7 shadow">
+                    <p class="font-semibold text-xl">Mini Alfajores de Maicena</p>
+                    <div class="grid grid-cols-3 gap-4 mt-6 text-center">
+                        <div><p class="text-xs text-gray-400">25 uds</p><p class="price text-amber-600">S/ 27</p></div>
+                        <div><p class="text-xs text-gray-400">50 uds</p><p class="price text-amber-600">S/ 45</p></div>
+                        <div><p class="text-xs text-gray-400">100 uds</p><p class="price text-amber-600">S/ 90</p></div>
+                    </div>
+                </div>
+                <div class="mobile-card bg-white rounded-3xl p-7 shadow">
+                    <p class="font-semibold text-xl">Tartaletas de Fresa</p>
+                    <div class="grid grid-cols-3 gap-4 mt-6 text-center">
+                        <div><p class="text-xs text-gray-400">25 uds</p><p class="price text-amber-600">S/ 30</p></div>
+                        <div><p class="text-xs text-gray-400">50 uds</p><p class="price text-amber-600">S/ 60</p></div>
+                        <div><p class="text-xs text-gray-400">100 uds</p><p class="price text-amber-600">S/ 120</p></div>
+                    </div>
+                </div>
+                <div class="mobile-card bg-white rounded-3xl p-7 shadow">
+                    <p class="font-semibold text-xl">Bombones de Chocolate</p>
+                    <div class="grid grid-cols-3 gap-4 mt-6 text-center">
+                        <div><p class="text-xs text-gray-400">25 uds</p><p class="price text-amber-600">S/ 30</p></div>
+                        <div><p class="text-xs text-gray-400">50 uds</p><p class="price text-amber-600">S/ 60</p></div>
+                        <div><p class="text-xs text-gray-400">100 uds</p><p class="price text-amber-600">S/ 120</p></div>
+                    </div>
+                </div>
+                <div class="mobile-card bg-white rounded-3xl p-7 shadow">
+                    <p class="font-semibold text-xl">Galletas de Mermelada</p>
+                    <div class="grid grid-cols-3 gap-4 mt-6 text-center">
+                        <div><p class="text-xs text-gray-400">25 uds</p><p class="price text-amber-600">S/ 27</p></div>
+                        <div><p class="text-xs text-gray-400">50 uds</p><p class="price text-amber-600">S/ 45</p></div>
+                        <div><p class="text-xs text-gray-400">100 uds</p><p class="price text-amber-600">S/ 90</p></div>
+                    </div>
+                </div>
+                <div class="mobile-card bg-white rounded-3xl p-7 shadow">
+                    <p class="font-semibold text-xl">Galletas con Chispas de Chocolate</p>
+                    <div class="grid grid-cols-3 gap-4 mt-6 text-center">
+                        <div><p class="text-xs text-gray-400">25 uds</p><p class="price text-amber-600">S/ 27</p></div>
+                        <div><p class="text-xs text-gray-400">50 uds</p><p class="price text-amber-600">S/ 45</p></div>
+                        <div><p class="text-xs text-gray-400">100 uds</p><p class="price text-amber-600">S/ 90</p></div>
+                    </div>
+                </div>
+                <div class="mobile-card bg-white rounded-3xl p-7 shadow">
+                    <p class="font-semibold text-xl">Mini Pie de Manzana</p>
+                    <div class="grid grid-cols-3 gap-4 mt-6 text-center">
+                        <div><p class="text-xs text-gray-400">25 uds</p><p class="price text-amber-600">S/ 30</p></div>
+                        <div><p class="text-xs text-gray-400">50 uds</p><p class="price text-amber-600">S/ 60</p></div>
+                        <div><p class="text-xs text-gray-400">100 uds</p><p class="price text-amber-600">S/ 120</p></div>
+                    </div>
+                </div>
+                <div class="mobile-card bg-white rounded-3xl p-7 shadow">
+                    <p class="font-semibold text-xl">Mini Brownies</p>
+                    <div class="grid grid-cols-3 gap-4 mt-6 text-center">
+                        <div><p class="text-xs text-gray-400">25 uds</p><p class="price text-amber-600">S/ 30</p></div>
+                        <div><p class="text-xs text-gray-400">50 uds</p><p class="price text-amber-600">S/ 60</p></div>
+                        <div><p class="text-xs text-gray-400">100 uds</p><p class="price text-amber-600">S/ 120</p></div>
+                    </div>
+                </div>
+                <div class="mobile-card bg-white rounded-3xl p-7 shadow">
+                    <p class="font-semibold text-xl">Mini Pie de Limón</p>
+                    <div class="grid grid-cols-3 gap-4 mt-6 text-center">
+                        <div><p class="text-xs text-gray-400">25 uds</p><p class="price text-amber-600">S/ 30</p></div>
+                        <div><p class="text-xs text-gray-400">50 uds</p><p class="price text-amber-600">S/ 60</p></div>
+                        <div><p class="text-xs text-gray-400">100 uds</p><p class="price text-amber-600">S/ 120</p></div>
+                    </div>
+                </div>
+                <div class="mobile-card bg-white rounded-3xl p-7 shadow">
+                    <p class="font-semibold text-xl">Mini Piononos con Manjar</p>
+                    <div class="grid grid-cols-3 gap-4 mt-6 text-center">
+                        <div><p class="text-xs text-gray-400">25 uds</p><p class="price text-amber-600">S/ 30</p></div>
+                        <div><p class="text-xs text-gray-400">50 uds</p><p class="price text-amber-600">S/ 60</p></div>
+                        <div><p class="text-xs text-gray-400">100 uds</p><p class="price text-amber-600">S/ 120</p></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -312,7 +418,8 @@
                 <p class="text-gray-500 mt-3">Precios por bandeja • Mínimo 25 unidades</p>
             </div>
             
-            <div class="overflow-x-auto rounded-3xl shadow-xl">
+            <!-- Tabla Desktop -->
+            <div class="hidden md:block overflow-x-auto rounded-3xl shadow-xl">
                 <table class="w-full table-style text-base">
                     <thead>
                         <tr>
@@ -337,54 +444,150 @@
                     </tbody>
                 </table>
             </div>
+
+            <!-- Tarjetas Móviles Salados -->
+            <div class="md:hidden space-y-8">
+                <div class="mobile-card bg-white rounded-3xl p-7 shadow">
+                    <p class="font-semibold text-xl">Petipanes con Pollo</p>
+                    <div class="grid grid-cols-3 gap-4 mt-6 text-center">
+                        <div><p class="text-xs text-gray-400">25 uds</p><p class="price text-amber-600">S/ 30</p></div>
+                        <div><p class="text-xs text-gray-400">50 uds</p><p class="price text-amber-600">S/ 60</p></div>
+                        <div><p class="text-xs text-gray-400">100 uds</p><p class="price text-amber-600">S/ 120</p></div>
+                    </div>
+                </div>
+                <div class="mobile-card bg-white rounded-3xl p-7 shadow">
+                    <p class="font-semibold text-xl">Juanecitos</p>
+                    <div class="grid grid-cols-3 gap-4 mt-6 text-center">
+                        <div><p class="text-xs text-gray-400">25 uds</p><p class="price text-amber-600">S/ 30</p></div>
+                        <div><p class="text-xs text-gray-400">50 uds</p><p class="price text-amber-600">S/ 60</p></div>
+                        <div><p class="text-xs text-gray-400">100 uds</p><p class="price text-amber-600">S/ 120</p></div>
+                    </div>
+                </div>
+                <div class="mobile-card bg-white rounded-3xl p-7 shadow">
+                    <p class="font-semibold text-xl">Humitas</p>
+                    <div class="grid grid-cols-3 gap-4 mt-6 text-center">
+                        <div><p class="text-xs text-gray-400">25 uds</p><p class="price text-amber-600">S/ 30</p></div>
+                        <div><p class="text-xs text-gray-400">50 uds</p><p class="price text-amber-600">S/ 60</p></div>
+                        <div><p class="text-xs text-gray-400">100 uds</p><p class="price text-amber-600">S/ 120</p></div>
+                    </div>
+                </div>
+                <div class="mobile-card bg-white rounded-3xl p-7 shadow">
+                    <p class="font-semibold text-xl">Mini Hamburguesitas</p>
+                    <div class="grid grid-cols-3 gap-4 mt-6 text-center">
+                        <div><p class="text-xs text-gray-400">25 uds</p><p class="price text-amber-600">S/ 30</p></div>
+                        <div><p class="text-xs text-gray-400">50 uds</p><p class="price text-amber-600">S/ 60</p></div>
+                        <div><p class="text-xs text-gray-400">100 uds</p><p class="price text-amber-600">S/ 120</p></div>
+                    </div>
+                </div>
+                <div class="mobile-card bg-white rounded-3xl p-7 shadow">
+                    <p class="font-semibold text-xl">Mini Pizzas</p>
+                    <div class="grid grid-cols-3 gap-4 mt-6 text-center">
+                        <div><p class="text-xs text-gray-400">25 uds</p><p class="price text-amber-600">S/ 30</p></div>
+                        <div><p class="text-xs text-gray-400">50 uds</p><p class="price text-amber-600">S/ 60</p></div>
+                        <div><p class="text-xs text-gray-400">100 uds</p><p class="price text-amber-600">S/ 120</p></div>
+                    </div>
+                </div>
+                <div class="mobile-card bg-white rounded-3xl p-7 shadow">
+                    <p class="font-semibold text-xl">Tequeños (Queso / Hot Dog)</p>
+                    <div class="grid grid-cols-3 gap-4 mt-6 text-center">
+                        <div><p class="text-xs text-gray-400">25 uds</p><p class="price text-amber-600">S/ 27</p></div>
+                        <div><p class="text-xs text-gray-400">50 uds</p><p class="price text-amber-600">S/ 45</p></div>
+                        <div><p class="text-xs text-gray-400">100 uds</p><p class="price text-amber-600">S/ 90</p></div>
+                    </div>
+                </div>
+                <div class="mobile-card bg-white rounded-3xl p-7 shadow">
+                    <p class="font-semibold text-xl">Brochetas de Pollo</p>
+                    <div class="grid grid-cols-3 gap-4 mt-6 text-center">
+                        <div><p class="text-xs text-gray-400">25 uds</p><p class="price text-amber-600">S/ 35</p></div>
+                        <div><p class="text-xs text-gray-400">50 uds</p><p class="price text-amber-600">S/ 70</p></div>
+                        <div><p class="text-xs text-gray-400">100 uds</p><p class="price text-amber-600">S/ 140</p></div>
+                    </div>
+                </div>
+                <div class="mobile-card bg-white rounded-3xl p-7 shadow">
+                    <p class="font-semibold text-xl">Alitas Brosters</p>
+                    <div class="grid grid-cols-3 gap-4 mt-6 text-center">
+                        <div><p class="text-xs text-gray-400">25 uds</p><p class="price text-amber-600">S/ 40</p></div>
+                        <div><p class="text-xs text-gray-400">50 uds</p><p class="price text-amber-600">S/ 80</p></div>
+                        <div><p class="text-xs text-gray-400">100 uds</p><p class="price text-amber-600">S/ 160</p></div>
+                    </div>
+                </div>
+                <div class="mobile-card bg-white rounded-3xl p-7 shadow">
+                    <p class="font-semibold text-xl">Triples de Jamón y Queso</p>
+                    <div class="grid grid-cols-3 gap-4 mt-6 text-center">
+                        <div><p class="text-xs text-gray-400">25 uds</p><p class="price text-amber-600">S/ 35</p></div>
+                        <div><p class="text-xs text-gray-400">50 uds</p><p class="price text-amber-600">S/ 70</p></div>
+                        <div><p class="text-xs text-gray-400">100 uds</p><p class="price text-amber-600">S/ 140</p></div>
+                    </div>
+                </div>
+                <div class="mobile-card bg-white rounded-3xl p-7 shadow">
+                    <p class="font-semibold text-xl">Empanaditas de Pollo</p>
+                    <div class="grid grid-cols-3 gap-4 mt-6 text-center">
+                        <div><p class="text-xs text-gray-400">25 uds</p><p class="price text-amber-600">S/ 30</p></div>
+                        <div><p class="text-xs text-gray-400">50 uds</p><p class="price text-amber-600">S/ 60</p></div>
+                        <div><p class="text-xs text-gray-400">100 uds</p><p class="price text-amber-600">S/ 120</p></div>
+                    </div>
+                </div>
+                <div class="mobile-card bg-white rounded-3xl p-7 shadow">
+                    <p class="font-semibold text-xl">Empanaditas de Carne</p>
+                    <div class="grid grid-cols-3 gap-4 mt-6 text-center">
+                        <div><p class="text-xs text-gray-400">25 uds</p><p class="price text-amber-600">S/ 35</p></div>
+                        <div><p class="text-xs text-gray-400">50 uds</p><p class="price text-amber-600">S/ 70</p></div>
+                        <div><p class="text-xs text-gray-400">100 uds</p><p class="price text-amber-600">S/ 140</p></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- EXTRAS -->
-    <section id="extras" class="py-24 bg-gray-900 text-white">
-        <div class="max-w-4xl mx-auto px-6">
-            <div class="text-center mb-12">
-                <span class="text-3xl">🥤</span>
-                <h2 class="heading-font text-5xl font-bold mt-3 section-title text-white">Extras y Complementos</h2>
+<!-- EXTRAS (versión limpia y profesional en móvil) -->
+<section id="extras" class="py-20 sm:py-24 bg-gray-900 text-white">
+    <div class="max-w-5xl mx-auto px-5 sm:px-6">
+        <div class="text-center mb-12">
+            <span class="text-4xl mb-2 block">🥤</span>
+            <h2 class="heading-font text-4xl sm:text-5xl font-bold section-title">Extras y Complementos</h2>
+        </div>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
+            <div class="extras-card rounded-3xl p-7 sm:p-8">
+                <div class="flex justify-between items-center gap-4">
+                    <div>
+                        <p class="text-lg sm:text-xl font-medium">Balde de refresco</p>
+                        <p class="text-sm opacity-80">(10 L)</p>
+                    </div>
+                    <p class="text-2xl sm:text-3xl font-bold text-amber-400 whitespace-nowrap">S/ 80</p>
+                </div>
             </div>
             
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-white/10 backdrop-blur-lg rounded-3xl p-8">
-                    <div class="flex justify-between items-start">
-                        <div>
-                            <p class="text-xl">Balde de refresco (10 L)</p>
-                        </div>
-                        <p class="text-3xl font-bold text-amber-400">S/ 80</p>
+            <div class="extras-card rounded-3xl p-7 sm:p-8">
+                <div class="flex justify-between items-center gap-4">
+                    <div>
+                        <p class="text-lg sm:text-xl font-medium">Refrescos en botellitas</p>
+                        <p class="text-sm opacity-80">Coca, Inka, Sprite, etc.</p>
                     </div>
+                    <p class="text-2xl sm:text-3xl font-bold text-amber-400 whitespace-nowrap">S/ 2 c/u</p>
                 </div>
-                <div class="bg-white/10 backdrop-blur-lg rounded-3xl p-8">
-                    <div class="flex justify-between items-start">
-                        <div>
-                            <p class="text-xl">Refrescos en botellitas</p>
-                            <p class="text-sm opacity-70">Coca, Inka, Sprite, etc.</p>
-                        </div>
-                        <p class="text-3xl font-bold text-amber-400">S/ 2 c/u</p>
+            </div>
+            
+            <div class="extras-card rounded-3xl p-7 sm:p-8">
+                <div class="flex justify-between items-center gap-4">
+                    <div>
+                        <p class="text-lg sm:text-xl font-medium">Tapers personalizados</p>
                     </div>
+                    <p class="text-2xl sm:text-3xl font-bold text-amber-400 whitespace-nowrap">S/ 7 cada 50</p>
                 </div>
-                <div class="bg-white/10 backdrop-blur-lg rounded-3xl p-8">
-                    <div class="flex justify-between items-start">
-                        <div>
-                            <p class="text-xl">Tapers personalizados</p>
-                        </div>
-                        <p class="text-3xl font-bold text-amber-400">S/ 7 cada 50</p>
+            </div>
+            
+            <div class="extras-card rounded-3xl p-7 sm:p-8">
+                <div class="flex justify-between items-center gap-4">
+                    <div>
+                        <p class="text-lg sm:text-xl font-medium">Fuentes transparentes</p>
                     </div>
-                </div>
-                <div class="bg-white/10 backdrop-blur-lg rounded-3xl p-8">
-                    <div class="flex justify-between items-start">
-                        <div>
-                            <p class="text-xl">Fuentes transparentes</p>
-                        </div>
-                        <p class="text-3xl font-bold text-amber-400">S/ 3.50 c/u</p>
-                    </div>
+                    <p class="text-2xl sm:text-3xl font-bold text-amber-400 whitespace-nowrap">S/ 3.50 c/u</p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- TESTIMONIOS -->
     <section class="py-24 bg-white">
@@ -432,7 +635,7 @@
         <div class="max-w-2xl mx-auto px-6">
             <h2 class="heading-font text-5xl font-bold mb-4">¿Listo para sorprender?</h2>
             <p class="text-2xl opacity-90 mb-10">Haz tu pedido con 48 horas de anticipación</p>
-            <a href="https://wa.me/51907444411?text=%C2%A1Hola%20Sra.%20Helga!%20Quisiera%20cotizar%20bocaditos%20para%20mi%20evento" 
+            <a href="https://wa.me/51907444411?text=%C2%A1Hola%20Sra.%20Helga!%20Quisiera%20cotizar%20bocaditos%20para%20mi%20evento"
                target="_blank"
                class="inline-flex items-center gap-4 bg-white text-gray-900 hover:bg-amber-100 text-2xl font-semibold px-14 py-7 rounded-3xl transition">
                 <span>Escribir por WhatsApp</span>
@@ -446,7 +649,7 @@
         <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-12">
             <div>
                 <div class="flex items-center gap-3 mb-6">
-                    <img src="https://i.pinimg.com/736x/d5/12/0d/d5120d05340771cdd16deaf372735866.jpg" 
+                    <img src="https://i.pinimg.com/736x/d5/12/0d/d5120d05340771cdd16deaf372735866.jpg"
                          alt="Logo" class="w-14 h-14 rounded-2xl">
                     <div class="text-white">
                         <span class="heading-font text-3xl">Helga López</span>
@@ -466,7 +669,7 @@
             
             <div>
                 <h4 class="text-white font-semibold mb-4">Contacto</h4>
-                <a href="https://wa.me/51907444411" target="_blank" 
+                <a href="https://wa.me/51907444411" target="_blank"
                    class="inline-flex items-center gap-3 hover:text-amber-400 transition">
                     <span class="text-3xl">📱</span>
                     <span class="text-lg font-medium text-white">+51 907 444 411</span>
@@ -477,7 +680,7 @@
     </footer>
 
     <!-- FLOATING WHATSAPP -->
-    <a href="https://wa.me/51907444411?text=%C2%A1Hola%20Sra.%20Helga!%20Quiero%20hacer%20un%20pedido" 
+    <a href="https://wa.me/51907444411?text=%C2%A1Hola%20Sra.%20Helga!%20Quiero%20hacer%20un%20pedido"
        target="_blank"
        class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white w-16 h-16 rounded-3xl flex items-center justify-center shadow-2xl z-50 floating-whatsapp">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-9 h-9" fill="currentColor" viewBox="0 0 24 24">
@@ -486,36 +689,32 @@
     </a>
 
     <script>
-        // Tailwind script already loaded
         function init() {
-            // Mobile menu
-            const menuBtn = document.getElementById('mobile-menu-button')
-            const mobileMenu = document.getElementById('mobile-menu')
+            const menuBtn = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
             
             menuBtn.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden')
-                menuBtn.textContent = mobileMenu.classList.contains('hidden') ? '☰' : '✕'
-            })
+                mobileMenu.classList.toggle('hidden');
+                menuBtn.textContent = mobileMenu.classList.contains('hidden') ? '☰' : '✕';
+            });
             
-            // Close mobile menu when clicking links
             document.querySelectorAll('.mobile-link').forEach(link => {
                 link.addEventListener('click', () => {
-                    mobileMenu.classList.add('hidden')
-                    menuBtn.textContent = '☰'
-                })
-            })
+                    mobileMenu.classList.add('hidden');
+                    menuBtn.textContent = '☰';
+                });
+            });
             
-            // Navbar scroll effect
             window.addEventListener('scroll', () => {
                 if (window.scrollY > 50) {
-                    document.querySelector('nav').classList.add('shadow-xl')
+                    document.querySelector('nav').classList.add('shadow-xl');
                 } else {
-                    document.querySelector('nav').classList.remove('shadow-xl')
+                    document.querySelector('nav').classList.remove('shadow-xl');
                 }
-            })
+            });
         }
         
-        window.onload = init
+        window.onload = init;
     </script>
 </body>
 </html>
