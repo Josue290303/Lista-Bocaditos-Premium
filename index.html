@@ -7,10 +7,10 @@
     <link rel="icon" href="https://i.pinimg.com/736x/d5/12/0d/d5120d05340771cdd16deaf372735866.jpg">
     
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&amp;family=Inter:wght@400;500;600&amp;display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap');
         
         :root {
             --amber: #f59e0b;
@@ -101,9 +101,10 @@
         }
 
         .price {
-            font-size: 1.85rem;
+            font-size: 1.75rem;
             line-height: 1;
             font-weight: 700;
+            white-space: nowrap;
         }
 
         .mobile-card {
@@ -121,23 +122,17 @@
             border: 1px solid rgba(255,255,255,0.2);
         }
 
+        @keyframes bounce-slow {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(4px); }
+        }
+        .animate-bounce-slow {
+            animation: bounce-slow 2.5s infinite ease-in-out;
+        }
+
         html {
             scroll-behavior: smooth;
         }
-    @keyframes bounce-slow {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(4px); }
-}
-.animate-bounce-slow {
-    animation: bounce-slow 2.5s infinite ease-in-out;
-}
-.animate-pulse-slow {
-    animation: pulse 3s infinite ease-in-out;
-}
-@keyframes pulse {
-    0%, 100% { opacity: 0.6; }
-    50% { opacity: 1; }
-}
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800 overflow-x-hidden">
@@ -196,55 +191,56 @@
         </div>
     </nav>
 
-<!-- HERO - Versión final corregida -->
-<header class="hero-bg min-h-screen flex items-center text-white relative">
-    <div class="max-w-5xl mx-auto px-5 sm:px-6 text-center py-20 sm:py-24">
-        <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-5 py-2 rounded-3xl mb-8">
-            <span class="text-amber-300">★</span>
-            <span class="text-sm font-medium tracking-widest">TARAPOTO • PERÚ</span>
+    <!-- HERO - Versión corregida -->
+    <header class="hero-bg min-h-screen flex items-center text-white relative">
+        <div class="max-w-5xl mx-auto px-5 sm:px-6 text-center py-20 sm:py-24">
+            <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-5 py-2 rounded-3xl mb-8">
+                <span class="text-amber-300">★</span>
+                <span class="text-sm font-medium tracking-widest">TARAPOTO • PERÚ</span>
+            </div>
+            
+            <h1 class="heading-font text-5xl sm:text-6xl md:text-7xl font-bold tracking-tighter leading-tight mb-6">
+                Bocaditos &amp;<br>Buffet Premium
+            </h1>
+            <p class="text-xl sm:text-2xl md:text-3xl opacity-90 mb-4">Sabores que enamoran</p>
+            <p class="text-lg sm:text-xl opacity-80 max-w-lg mx-auto mb-10">
+                By Helga López • Hechos con amor para tus momentos especiales
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-5 justify-center items-center mt-8">
+                <a href="#dulces"
+                   class="bg-white text-gray-900 hover:bg-amber-50 font-semibold text-lg px-10 py-5 rounded-3xl transition shadow-lg w-full sm:w-auto">
+                    Ver nuestro catálogo
+                </a>
+                <a href="https://wa.me/51907444411?text=%C2%A1Hola%20Sra.%20Helga!%20Deseo%20información%20sobre%20bocaditos"
+                   target="_blank"
+                   class="border-2 border-white hover:bg-white hover:text-gray-900 font-semibold text-lg px-10 py-5 rounded-3xl transition w-full sm:w-auto">
+                    Reservar ahora
+                </a>
+            </div>
+            
+            <!-- Checks en fila con wrap suave -->
+            <div class="mt-12 flex flex-wrap justify-center gap-x-6 sm:gap-x-10 gap-y-3 text-base sm:text-lg opacity-90 max-w-3xl mx-auto">
+                <div class="flex items-center gap-2 whitespace-nowrap">
+                    <span class="text-green-400 text-2xl">✔</span> Lo mejor de lo mejor
+                </div>
+                <div class="flex items-center gap-2 whitespace-nowrap">
+                    <span class="text-green-400 text-2xl">✔</span> Entrega a domicilio
+                </div>
+                <div class="flex items-center gap-2 whitespace-nowrap">
+                    <span class="text-green-400 text-2xl">✔</span> Personalizados
+                </div>
+            </div>
         </div>
         
-        <h1 class="heading-font text-5xl sm:text-6xl md:text-7xl font-bold tracking-tighter leading-tight mb-6">
-            Bocaditos &amp;<br>Buffet Premium
-        </h1>
-        <p class="text-xl sm:text-2xl md:text-3xl opacity-90 mb-4">Sabores que enamoran</p>
-        <p class="text-lg sm:text-xl opacity-80 max-w-lg mx-auto mb-10">
-            By Helga López • Hechos con amor para tus momentos especiales
-        </p>
-        
-        <div class="flex flex-col sm:flex-row gap-5 justify-center items-center mt-8">
-            <a href="#dulces"
-               class="bg-white text-gray-900 hover:bg-amber-50 font-semibold text-lg px-10 py-5 rounded-3xl transition shadow-lg w-full sm:w-auto">
-                Ver nuestro catálogo
-            </a>
-            <a href="https://wa.me/51907444411?text=%C2%A1Hola%20Sra.%20Helga!%20Deseo%20información%20sobre%20bocaditos"
-               target="_blank"
-               class="border-2 border-white hover:bg-white hover:text-gray-900 font-semibold text-lg px-10 py-5 rounded-3xl transition w-full sm:w-auto">
-                Reservar ahora
-            </a>
-        </div>
-        
-        <div class="mt-12 flex flex-wrap justify-center gap-x-8 gap-y-4 text-base sm:text-lg opacity-90">
-            <div class="flex items-center gap-2 whitespace-nowrap">
-                <span class="text-green-400 text-2xl">✔</span> Lo mejor de lo mejor
-            </div>
-            <div class="flex items-center gap-2 whitespace-nowrap">
-                <span class="text-green-400 text-2xl">✔</span> Entrega a domicilio
-            </div>
-            <div class="flex items-center gap-2 whitespace-nowrap">
-                <span class="text-green-400 text-2xl">✔</span> Personalizados
+        <!-- Indicador de scroll -->
+        <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center opacity-60 pointer-events-none">
+            <span class="text-xs tracking-widest mb-1.5">DESLIZA</span>
+            <div class="w-5 h-8 border-2 border-white rounded-full flex items-center justify-center">
+                <div class="w-1 h-2 bg-white rounded-full animate-bounce"></div>
             </div>
         </div>
-    </div>
-    
-    <!-- Indicador de scroll - más abajo, discreto y con animación -->
-    <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center opacity-60 pointer-events-none">
-        <span class="text-xs tracking-widest mb-1.5">DESLIZA</span>
-        <div class="w-5 h-8 border-2 border-white rounded-full flex items-center justify-center animate-pulse-slow">
-            <div class="w-1 h-2 bg-white rounded-full animate-bounce-slow"></div>
-        </div>
-    </div>
-</header>
+    </header>
 
     <!-- SERVICIOS -->
     <section id="servicios" class="max-w-7xl mx-auto px-6 py-24">
@@ -254,10 +250,8 @@
         </div>
         
         <div class="grid md:grid-cols-3 gap-8">
-            <!-- Card 1 -->
             <div class="bg-white rounded-3xl overflow-hidden card-hover">
-                <div class="h-56 bg-cover bg-center"
-                     style="background-image: url('https://i.pinimg.com/736x/84/17/0e/84170ea1e18c80b5a84a84caddf0cdaf.jpg')"></div>
+                <div class="h-56 bg-cover bg-center" style="background-image: url('https://i.pinimg.com/736x/84/17/0e/84170ea1e18c80b5a84a84caddf0cdaf.jpg')"></div>
                 <div class="p-8">
                     <h3 class="text-2xl font-semibold mb-3">Buffets Elegantes</h3>
                     <p class="text-gray-600">Cumpleaños, matrimonios, aniversarios, eventos corporativos y reuniones familiares. Todo preparado con ingredientes frescos y presentación impecable.</p>
@@ -269,10 +263,8 @@
                 </div>
             </div>
             
-            <!-- Card 2 -->
             <div class="bg-white rounded-3xl overflow-hidden card-hover">
-                <div class="h-56 bg-cover bg-center"
-                     style="background-image: url('https://i.pinimg.com/736x/6a/3a/ae/6a3aaeabed0e732476cc38ed602499b6.jpg')"></div>
+                <div class="h-56 bg-cover bg-center" style="background-image: url('https://i.pinimg.com/736x/6a/3a/ae/6a3aaeabed0e732476cc38ed602499b6.jpg')"></div>
                 <div class="p-8">
                     <h3 class="text-2xl font-semibold mb-3">Bocaditos Dulces</h3>
                     <p class="text-gray-600">Mini postres finos, alfajores, tartaletas, brownies y más. Ideales para endulzar bodas, baby showers y cualquier celebración.</p>
@@ -284,10 +276,8 @@
                 </div>
             </div>
             
-            <!-- Card 3 -->
             <div class="bg-white rounded-3xl overflow-hidden card-hover">
-                <div class="h-56 bg-cover bg-center"
-                     style="background-image: url('https://i.pinimg.com/736x/db/fd/ea/dbfdeac8b3a5721388a0da7199fd86b6.jpg')"></div>
+                <div class="h-56 bg-cover bg-center" style="background-image: url('https://i.pinimg.com/736x/db/fd/ea/dbfdeac8b3a5721388a0da7199fd86b6.jpg')"></div>
                 <div class="p-8">
                     <h3 class="text-2xl font-semibold mb-3">Bocaditos Salados</h3>
                     <p class="text-gray-600">Petipanes, tequeños, humitas, mini pizzas y brochetas. Perfectos para cócteles, reuniones y eventos empresariales.</p>
@@ -333,76 +323,76 @@
 
             <!-- Tarjetas Móviles Dulces -->
             <div class="md:hidden space-y-8">
-                <div class="mobile-card bg-white rounded-3xl p-7 shadow">
-                    <p class="font-semibold text-xl">Mini Alfajores de Maicena</p>
-                    <div class="grid grid-cols-3 gap-4 mt-6 text-center">
-                        <div><p class="text-xs text-gray-400">25 uds</p><p class="price text-amber-600">S/ 27</p></div>
-                        <div><p class="text-xs text-gray-400">50 uds</p><p class="price text-amber-600">S/ 45</p></div>
-                        <div><p class="text-xs text-gray-400">100 uds</p><p class="price text-amber-600">S/ 90</p></div>
+                <div class="mobile-card bg-white rounded-3xl p-6 shadow">
+                    <p class="font-semibold text-xl mb-4">Mini Alfajores de Maicena</p>
+                    <div class="grid grid-cols-3 gap-3 text-center">
+                        <div><p class="text-xs text-gray-500">25 uds</p><p class="price text-amber-600">S/ 27</p></div>
+                        <div><p class="text-xs text-gray-500">50 uds</p><p class="price text-amber-600">S/ 45</p></div>
+                        <div><p class="text-xs text-gray-500">100 uds</p><p class="price text-amber-600">S/ 90</p></div>
                     </div>
                 </div>
-                <div class="mobile-card bg-white rounded-3xl p-7 shadow">
-                    <p class="font-semibold text-xl">Tartaletas de Fresa</p>
-                    <div class="grid grid-cols-3 gap-4 mt-6 text-center">
-                        <div><p class="text-xs text-gray-400">25 uds</p><p class="price text-amber-600">S/ 30</p></div>
-                        <div><p class="text-xs text-gray-400">50 uds</p><p class="price text-amber-600">S/ 60</p></div>
-                        <div><p class="text-xs text-gray-400">100 uds</p><p class="price text-amber-600">S/ 120</p></div>
+                <div class="mobile-card bg-white rounded-3xl p-6 shadow">
+                    <p class="font-semibold text-xl mb-4">Tartaletas de Fresa</p>
+                    <div class="grid grid-cols-3 gap-3 text-center">
+                        <div><p class="text-xs text-gray-500">25 uds</p><p class="price text-amber-600">S/ 30</p></div>
+                        <div><p class="text-xs text-gray-500">50 uds</p><p class="price text-amber-600">S/ 60</p></div>
+                        <div><p class="text-xs text-gray-500">100 uds</p><p class="price text-amber-600">S/ 120</p></div>
                     </div>
                 </div>
-                <div class="mobile-card bg-white rounded-3xl p-7 shadow">
-                    <p class="font-semibold text-xl">Bombones de Chocolate</p>
-                    <div class="grid grid-cols-3 gap-4 mt-6 text-center">
-                        <div><p class="text-xs text-gray-400">25 uds</p><p class="price text-amber-600">S/ 30</p></div>
-                        <div><p class="text-xs text-gray-400">50 uds</p><p class="price text-amber-600">S/ 60</p></div>
-                        <div><p class="text-xs text-gray-400">100 uds</p><p class="price text-amber-600">S/ 120</p></div>
+                <div class="mobile-card bg-white rounded-3xl p-6 shadow">
+                    <p class="font-semibold text-xl mb-4">Bombones de Chocolate</p>
+                    <div class="grid grid-cols-3 gap-3 text-center">
+                        <div><p class="text-xs text-gray-500">25 uds</p><p class="price text-amber-600">S/ 30</p></div>
+                        <div><p class="text-xs text-gray-500">50 uds</p><p class="price text-amber-600">S/ 60</p></div>
+                        <div><p class="text-xs text-gray-500">100 uds</p><p class="price text-amber-600">S/ 120</p></div>
                     </div>
                 </div>
-                <div class="mobile-card bg-white rounded-3xl p-7 shadow">
-                    <p class="font-semibold text-xl">Galletas de Mermelada</p>
-                    <div class="grid grid-cols-3 gap-4 mt-6 text-center">
-                        <div><p class="text-xs text-gray-400">25 uds</p><p class="price text-amber-600">S/ 27</p></div>
-                        <div><p class="text-xs text-gray-400">50 uds</p><p class="price text-amber-600">S/ 45</p></div>
-                        <div><p class="text-xs text-gray-400">100 uds</p><p class="price text-amber-600">S/ 90</p></div>
+                <div class="mobile-card bg-white rounded-3xl p-6 shadow">
+                    <p class="font-semibold text-xl mb-4">Galletas de Mermelada</p>
+                    <div class="grid grid-cols-3 gap-3 text-center">
+                        <div><p class="text-xs text-gray-500">25 uds</p><p class="price text-amber-600">S/ 27</p></div>
+                        <div><p class="text-xs text-gray-500">50 uds</p><p class="price text-amber-600">S/ 45</p></div>
+                        <div><p class="text-xs text-gray-500">100 uds</p><p class="price text-amber-600">S/ 90</p></div>
                     </div>
                 </div>
-                <div class="mobile-card bg-white rounded-3xl p-7 shadow">
-                    <p class="font-semibold text-xl">Galletas con Chispas de Chocolate</p>
-                    <div class="grid grid-cols-3 gap-4 mt-6 text-center">
-                        <div><p class="text-xs text-gray-400">25 uds</p><p class="price text-amber-600">S/ 27</p></div>
-                        <div><p class="text-xs text-gray-400">50 uds</p><p class="price text-amber-600">S/ 45</p></div>
-                        <div><p class="text-xs text-gray-400">100 uds</p><p class="price text-amber-600">S/ 90</p></div>
+                <div class="mobile-card bg-white rounded-3xl p-6 shadow">
+                    <p class="font-semibold text-xl mb-4">Galletas con Chispas de Chocolate</p>
+                    <div class="grid grid-cols-3 gap-3 text-center">
+                        <div><p class="text-xs text-gray-500">25 uds</p><p class="price text-amber-600">S/ 27</p></div>
+                        <div><p class="text-xs text-gray-500">50 uds</p><p class="price text-amber-600">S/ 45</p></div>
+                        <div><p class="text-xs text-gray-500">100 uds</p><p class="price text-amber-600">S/ 90</p></div>
                     </div>
                 </div>
-                <div class="mobile-card bg-white rounded-3xl p-7 shadow">
-                    <p class="font-semibold text-xl">Mini Pie de Manzana</p>
-                    <div class="grid grid-cols-3 gap-4 mt-6 text-center">
-                        <div><p class="text-xs text-gray-400">25 uds</p><p class="price text-amber-600">S/ 30</p></div>
-                        <div><p class="text-xs text-gray-400">50 uds</p><p class="price text-amber-600">S/ 60</p></div>
-                        <div><p class="text-xs text-gray-400">100 uds</p><p class="price text-amber-600">S/ 120</p></div>
+                <div class="mobile-card bg-white rounded-3xl p-6 shadow">
+                    <p class="font-semibold text-xl mb-4">Mini Pie de Manzana</p>
+                    <div class="grid grid-cols-3 gap-3 text-center">
+                        <div><p class="text-xs text-gray-500">25 uds</p><p class="price text-amber-600">S/ 30</p></div>
+                        <div><p class="text-xs text-gray-500">50 uds</p><p class="price text-amber-600">S/ 60</p></div>
+                        <div><p class="text-xs text-gray-500">100 uds</p><p class="price text-amber-600">S/ 120</p></div>
                     </div>
                 </div>
-                <div class="mobile-card bg-white rounded-3xl p-7 shadow">
-                    <p class="font-semibold text-xl">Mini Brownies</p>
-                    <div class="grid grid-cols-3 gap-4 mt-6 text-center">
-                        <div><p class="text-xs text-gray-400">25 uds</p><p class="price text-amber-600">S/ 30</p></div>
-                        <div><p class="text-xs text-gray-400">50 uds</p><p class="price text-amber-600">S/ 60</p></div>
-                        <div><p class="text-xs text-gray-400">100 uds</p><p class="price text-amber-600">S/ 120</p></div>
+                <div class="mobile-card bg-white rounded-3xl p-6 shadow">
+                    <p class="font-semibold text-xl mb-4">Mini Brownies</p>
+                    <div class="grid grid-cols-3 gap-3 text-center">
+                        <div><p class="text-xs text-gray-500">25 uds</p><p class="price text-amber-600">S/ 30</p></div>
+                        <div><p class="text-xs text-gray-500">50 uds</p><p class="price text-amber-600">S/ 60</p></div>
+                        <div><p class="text-xs text-gray-500">100 uds</p><p class="price text-amber-600">S/ 120</p></div>
                     </div>
                 </div>
-                <div class="mobile-card bg-white rounded-3xl p-7 shadow">
-                    <p class="font-semibold text-xl">Mini Pie de Limón</p>
-                    <div class="grid grid-cols-3 gap-4 mt-6 text-center">
-                        <div><p class="text-xs text-gray-400">25 uds</p><p class="price text-amber-600">S/ 30</p></div>
-                        <div><p class="text-xs text-gray-400">50 uds</p><p class="price text-amber-600">S/ 60</p></div>
-                        <div><p class="text-xs text-gray-400">100 uds</p><p class="price text-amber-600">S/ 120</p></div>
+                <div class="mobile-card bg-white rounded-3xl p-6 shadow">
+                    <p class="font-semibold text-xl mb-4">Mini Pie de Limón</p>
+                    <div class="grid grid-cols-3 gap-3 text-center">
+                        <div><p class="text-xs text-gray-500">25 uds</p><p class="price text-amber-600">S/ 30</p></div>
+                        <div><p class="text-xs text-gray-500">50 uds</p><p class="price text-amber-600">S/ 60</p></div>
+                        <div><p class="text-xs text-gray-500">100 uds</p><p class="price text-amber-600">S/ 120</p></div>
                     </div>
                 </div>
-                <div class="mobile-card bg-white rounded-3xl p-7 shadow">
-                    <p class="font-semibold text-xl">Mini Piononos con Manjar</p>
-                    <div class="grid grid-cols-3 gap-4 mt-6 text-center">
-                        <div><p class="text-xs text-gray-400">25 uds</p><p class="price text-amber-600">S/ 30</p></div>
-                        <div><p class="text-xs text-gray-400">50 uds</p><p class="price text-amber-600">S/ 60</p></div>
-                        <div><p class="text-xs text-gray-400">100 uds</p><p class="price text-amber-600">S/ 120</p></div>
+                <div class="mobile-card bg-white rounded-3xl p-6 shadow">
+                    <p class="font-semibold text-xl mb-4">Mini Piononos con Manjar</p>
+                    <div class="grid grid-cols-3 gap-3 text-center">
+                        <div><p class="text-xs text-gray-500">25 uds</p><p class="price text-amber-600">S/ 30</p></div>
+                        <div><p class="text-xs text-gray-500">50 uds</p><p class="price text-amber-600">S/ 60</p></div>
+                        <div><p class="text-xs text-gray-500">100 uds</p><p class="price text-amber-600">S/ 120</p></div>
                     </div>
                 </div>
             </div>
@@ -447,147 +437,137 @@
 
             <!-- Tarjetas Móviles Salados -->
             <div class="md:hidden space-y-8">
-                <div class="mobile-card bg-white rounded-3xl p-7 shadow">
-                    <p class="font-semibold text-xl">Petipanes con Pollo</p>
-                    <div class="grid grid-cols-3 gap-4 mt-6 text-center">
-                        <div><p class="text-xs text-gray-400">25 uds</p><p class="price text-amber-600">S/ 30</p></div>
-                        <div><p class="text-xs text-gray-400">50 uds</p><p class="price text-amber-600">S/ 60</p></div>
-                        <div><p class="text-xs text-gray-400">100 uds</p><p class="price text-amber-600">S/ 120</p></div>
+                <div class="mobile-card bg-white rounded-3xl p-6 shadow">
+                    <p class="font-semibold text-xl mb-4">Petipanes con Pollo</p>
+                    <div class="grid grid-cols-3 gap-3 text-center">
+                        <div><p class="text-xs text-gray-500">25 uds</p><p class="price text-amber-600">S/ 30</p></div>
+                        <div><p class="text-xs text-gray-500">50 uds</p><p class="price text-amber-600">S/ 60</p></div>
+                        <div><p class="text-xs text-gray-500">100 uds</p><p class="price text-amber-600">S/ 120</p></div>
                     </div>
                 </div>
-                <div class="mobile-card bg-white rounded-3xl p-7 shadow">
-                    <p class="font-semibold text-xl">Juanecitos</p>
-                    <div class="grid grid-cols-3 gap-4 mt-6 text-center">
-                        <div><p class="text-xs text-gray-400">25 uds</p><p class="price text-amber-600">S/ 30</p></div>
-                        <div><p class="text-xs text-gray-400">50 uds</p><p class="price text-amber-600">S/ 60</p></div>
-                        <div><p class="text-xs text-gray-400">100 uds</p><p class="price text-amber-600">S/ 120</p></div>
+                <div class="mobile-card bg-white rounded-3xl p-6 shadow">
+                    <p class="font-semibold text-xl mb-4">Juanecitos</p>
+                    <div class="grid grid-cols-3 gap-3 text-center">
+                        <div><p class="text-xs text-gray-500">25 uds</p><p class="price text-amber-600">S/ 30</p></div>
+                        <div><p class="text-xs text-gray-500">50 uds</p><p class="price text-amber-600">S/ 60</p></div>
+                        <div><p class="text-xs text-gray-500">100 uds</p><p class="price text-amber-600">S/ 120</p></div>
                     </div>
                 </div>
-                <div class="mobile-card bg-white rounded-3xl p-7 shadow">
-                    <p class="font-semibold text-xl">Humitas</p>
-                    <div class="grid grid-cols-3 gap-4 mt-6 text-center">
-                        <div><p class="text-xs text-gray-400">25 uds</p><p class="price text-amber-600">S/ 30</p></div>
-                        <div><p class="text-xs text-gray-400">50 uds</p><p class="price text-amber-600">S/ 60</p></div>
-                        <div><p class="text-xs text-gray-400">100 uds</p><p class="price text-amber-600">S/ 120</p></div>
+                <div class="mobile-card bg-white rounded-3xl p-6 shadow">
+                    <p class="font-semibold text-xl mb-4">Humitas</p>
+                    <div class="grid grid-cols-3 gap-3 text-center">
+                        <div><p class="text-xs text-gray-500">25 uds</p><p class="price text-amber-600">S/ 30</p></div>
+                        <div><p class="text-xs text-gray-500">50 uds</p><p class="price text-amber-600">S/ 60</p></div>
+                        <div><p class="text-xs text-gray-500">100 uds</p><p class="price text-amber-600">S/ 120</p></div>
                     </div>
                 </div>
-                <div class="mobile-card bg-white rounded-3xl p-7 shadow">
-                    <p class="font-semibold text-xl">Mini Hamburguesitas</p>
-                    <div class="grid grid-cols-3 gap-4 mt-6 text-center">
-                        <div><p class="text-xs text-gray-400">25 uds</p><p class="price text-amber-600">S/ 30</p></div>
-                        <div><p class="text-xs text-gray-400">50 uds</p><p class="price text-amber-600">S/ 60</p></div>
-                        <div><p class="text-xs text-gray-400">100 uds</p><p class="price text-amber-600">S/ 120</p></div>
+                <div class="mobile-card bg-white rounded-3xl p-6 shadow">
+                    <p class="font-semibold text-xl mb-4">Mini Hamburguesitas</p>
+                    <div class="grid grid-cols-3 gap-3 text-center">
+                        <div><p class="text-xs text-gray-500">25 uds</p><p class="price text-amber-600">S/ 30</p></div>
+                        <div><p class="text-xs text-gray-500">50 uds</p><p class="price text-amber-600">S/ 60</p></div>
+                        <div><p class="text-xs text-gray-500">100 uds</p><p class="price text-amber-600">S/ 120</p></div>
                     </div>
                 </div>
-                <div class="mobile-card bg-white rounded-3xl p-7 shadow">
-                    <p class="font-semibold text-xl">Mini Pizzas</p>
-                    <div class="grid grid-cols-3 gap-4 mt-6 text-center">
-                        <div><p class="text-xs text-gray-400">25 uds</p><p class="price text-amber-600">S/ 30</p></div>
-                        <div><p class="text-xs text-gray-400">50 uds</p><p class="price text-amber-600">S/ 60</p></div>
-                        <div><p class="text-xs text-gray-400">100 uds</p><p class="price text-amber-600">S/ 120</p></div>
+                <div class="mobile-card bg-white rounded-3xl p-6 shadow">
+                    <p class="font-semibold text-xl mb-4">Mini Pizzas</p>
+                    <div class="grid grid-cols-3 gap-3 text-center">
+                        <div><p class="text-xs text-gray-500">25 uds</p><p class="price text-amber-600">S/ 30</p></div>
+                        <div><p class="text-xs text-gray-500">50 uds</p><p class="price text-amber-600">S/ 60</p></div>
+                        <div><p class="text-xs text-gray-500">100 uds</p><p class="price text-amber-600">S/ 120</p></div>
                     </div>
                 </div>
-                <div class="mobile-card bg-white rounded-3xl p-7 shadow">
-                    <p class="font-semibold text-xl">Tequeños (Queso / Hot Dog)</p>
-                    <div class="grid grid-cols-3 gap-4 mt-6 text-center">
-                        <div><p class="text-xs text-gray-400">25 uds</p><p class="price text-amber-600">S/ 27</p></div>
-                        <div><p class="text-xs text-gray-400">50 uds</p><p class="price text-amber-600">S/ 45</p></div>
-                        <div><p class="text-xs text-gray-400">100 uds</p><p class="price text-amber-600">S/ 90</p></div>
+                <div class="mobile-card bg-white rounded-3xl p-6 shadow">
+                    <p class="font-semibold text-xl mb-4">Tequeños (Queso / Hot Dog)</p>
+                    <div class="grid grid-cols-3 gap-3 text-center">
+                        <div><p class="text-xs text-gray-500">25 uds</p><p class="price text-amber-600">S/ 27</p></div>
+                        <div><p class="text-xs text-gray-500">50 uds</p><p class="price text-amber-600">S/ 45</p></div>
+                        <div><p class="text-xs text-gray-500">100 uds</p><p class="price text-amber-600">S/ 90</p></div>
                     </div>
                 </div>
-                <div class="mobile-card bg-white rounded-3xl p-7 shadow">
-                    <p class="font-semibold text-xl">Brochetas de Pollo</p>
-                    <div class="grid grid-cols-3 gap-4 mt-6 text-center">
-                        <div><p class="text-xs text-gray-400">25 uds</p><p class="price text-amber-600">S/ 35</p></div>
-                        <div><p class="text-xs text-gray-400">50 uds</p><p class="price text-amber-600">S/ 70</p></div>
-                        <div><p class="text-xs text-gray-400">100 uds</p><p class="price text-amber-600">S/ 140</p></div>
+                <div class="mobile-card bg-white rounded-3xl p-6 shadow">
+                    <p class="font-semibold text-xl mb-4">Brochetas de Pollo</p>
+                    <div class="grid grid-cols-3 gap-3 text-center">
+                        <div><p class="text-xs text-gray-500">25 uds</p><p class="price text-amber-600">S/ 35</p></div>
+                        <div><p class="text-xs text-gray-500">50 uds</p><p class="price text-amber-600">S/ 70</p></div>
+                        <div><p class="text-xs text-gray-500">100 uds</p><p class="price text-amber-600">S/ 140</p></div>
                     </div>
                 </div>
-                <div class="mobile-card bg-white rounded-3xl p-7 shadow">
-                    <p class="font-semibold text-xl">Alitas Brosters</p>
-                    <div class="grid grid-cols-3 gap-4 mt-6 text-center">
-                        <div><p class="text-xs text-gray-400">25 uds</p><p class="price text-amber-600">S/ 40</p></div>
-                        <div><p class="text-xs text-gray-400">50 uds</p><p class="price text-amber-600">S/ 80</p></div>
-                        <div><p class="text-xs text-gray-400">100 uds</p><p class="price text-amber-600">S/ 160</p></div>
+                <div class="mobile-card bg-white rounded-3xl p-6 shadow">
+                    <p class="font-semibold text-xl mb-4">Alitas Brosters</p>
+                    <div class="grid grid-cols-3 gap-3 text-center">
+                        <div><p class="text-xs text-gray-500">25 uds</p><p class="price text-amber-600">S/ 40</p></div>
+                        <div><p class="text-xs text-gray-500">50 uds</p><p class="price text-amber-600">S/ 80</p></div>
+                        <div><p class="text-xs text-gray-500">100 uds</p><p class="price text-amber-600">S/ 160</p></div>
                     </div>
                 </div>
-                <div class="mobile-card bg-white rounded-3xl p-7 shadow">
-                    <p class="font-semibold text-xl">Triples de Jamón y Queso</p>
-                    <div class="grid grid-cols-3 gap-4 mt-6 text-center">
-                        <div><p class="text-xs text-gray-400">25 uds</p><p class="price text-amber-600">S/ 35</p></div>
-                        <div><p class="text-xs text-gray-400">50 uds</p><p class="price text-amber-600">S/ 70</p></div>
-                        <div><p class="text-xs text-gray-400">100 uds</p><p class="price text-amber-600">S/ 140</p></div>
+                <div class="mobile-card bg-white rounded-3xl p-6 shadow">
+                    <p class="font-semibold text-xl mb-4">Triples de Jamón y Queso</p>
+                    <div class="grid grid-cols-3 gap-3 text-center">
+                        <div><p class="text-xs text-gray-500">25 uds</p><p class="price text-amber-600">S/ 35</p></div>
+                        <div><p class="text-xs text-gray-500">50 uds</p><p class="price text-amber-600">S/ 70</p></div>
+                        <div><p class="text-xs text-gray-500">100 uds</p><p class="price text-amber-600">S/ 140</p></div>
                     </div>
                 </div>
-                <div class="mobile-card bg-white rounded-3xl p-7 shadow">
-                    <p class="font-semibold text-xl">Empanaditas de Pollo</p>
-                    <div class="grid grid-cols-3 gap-4 mt-6 text-center">
-                        <div><p class="text-xs text-gray-400">25 uds</p><p class="price text-amber-600">S/ 30</p></div>
-                        <div><p class="text-xs text-gray-400">50 uds</p><p class="price text-amber-600">S/ 60</p></div>
-                        <div><p class="text-xs text-gray-400">100 uds</p><p class="price text-amber-600">S/ 120</p></div>
+                <div class="mobile-card bg-white rounded-3xl p-6 shadow">
+                    <p class="font-semibold text-xl mb-4">Empanaditas de Pollo</p>
+                    <div class="grid grid-cols-3 gap-3 text-center">
+                        <div><p class="text-xs text-gray-500">25 uds</p><p class="price text-amber-600">S/ 30</p></div>
+                        <div><p class="text-xs text-gray-500">50 uds</p><p class="price text-amber-600">S/ 60</p></div>
+                        <div><p class="text-xs text-gray-500">100 uds</p><p class="price text-amber-600">S/ 120</p></div>
                     </div>
                 </div>
-                <div class="mobile-card bg-white rounded-3xl p-7 shadow">
-                    <p class="font-semibold text-xl">Empanaditas de Carne</p>
-                    <div class="grid grid-cols-3 gap-4 mt-6 text-center">
-                        <div><p class="text-xs text-gray-400">25 uds</p><p class="price text-amber-600">S/ 35</p></div>
-                        <div><p class="text-xs text-gray-400">50 uds</p><p class="price text-amber-600">S/ 70</p></div>
-                        <div><p class="text-xs text-gray-400">100 uds</p><p class="price text-amber-600">S/ 140</p></div>
+                <div class="mobile-card bg-white rounded-3xl p-6 shadow">
+                    <p class="font-semibold text-xl mb-4">Empanaditas de Carne</p>
+                    <div class="grid grid-cols-3 gap-3 text-center">
+                        <div><p class="text-xs text-gray-500">25 uds</p><p class="price text-amber-600">S/ 35</p></div>
+                        <div><p class="text-xs text-gray-500">50 uds</p><p class="price text-amber-600">S/ 70</p></div>
+                        <div><p class="text-xs text-gray-500">100 uds</p><p class="price text-amber-600">S/ 140</p></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-<!-- EXTRAS (versión limpia y profesional en móvil) -->
-<section id="extras" class="py-20 sm:py-24 bg-gray-900 text-white">
-    <div class="max-w-5xl mx-auto px-5 sm:px-6">
-        <div class="text-center mb-12">
-            <span class="text-4xl mb-2 block">🥤</span>
-            <h2 class="heading-font text-4xl sm:text-5xl font-bold section-title">Extras y Complementos</h2>
-        </div>
-        
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
-            <div class="extras-card rounded-3xl p-7 sm:p-8">
-                <div class="flex justify-between items-center gap-4">
-                    <div>
-                        <p class="text-lg sm:text-xl font-medium">Balde de refresco</p>
-                        <p class="text-sm opacity-80">(10 L)</p>
-                    </div>
-                    <p class="text-2xl sm:text-3xl font-bold text-amber-400 whitespace-nowrap">S/ 80</p>
-                </div>
+    <!-- EXTRAS -->
+    <section id="extras" class="py-24 bg-gray-900 text-white">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <span class="text-3xl">🥤</span>
+                <h2 class="heading-font text-5xl font-bold mt-3 section-title text-white">Extras y Complementos</h2>
             </div>
             
-            <div class="extras-card rounded-3xl p-7 sm:p-8">
-                <div class="flex justify-between items-center gap-4">
-                    <div>
-                        <p class="text-lg sm:text-xl font-medium">Refrescos en botellitas</p>
-                        <p class="text-sm opacity-80">Coca, Inka, Sprite, etc.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="extras-card rounded-3xl p-8">
+                    <div class="flex justify-between items-center">
+                        <p class="text-xl">Balde de refresco (10 L)</p>
+                        <p class="text-3xl font-bold text-amber-400">S/ 80</p>
                     </div>
-                    <p class="text-2xl sm:text-3xl font-bold text-amber-400 whitespace-nowrap">S/ 2 c/u</p>
                 </div>
-            </div>
-            
-            <div class="extras-card rounded-3xl p-7 sm:p-8">
-                <div class="flex justify-between items-center gap-4">
-                    <div>
-                        <p class="text-lg sm:text-xl font-medium">Tapers personalizados</p>
+                <div class="extras-card rounded-3xl p-8">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <p class="text-xl">Refrescos en botellitas</p>
+                            <p class="text-sm opacity-70">Coca, Inka, Sprite, etc.</p>
+                        </div>
+                        <p class="text-3xl font-bold text-amber-400">S/ 2 c/u</p>
                     </div>
-                    <p class="text-2xl sm:text-3xl font-bold text-amber-400 whitespace-nowrap">S/ 7 cada 50</p>
                 </div>
-            </div>
-            
-            <div class="extras-card rounded-3xl p-7 sm:p-8">
-                <div class="flex justify-between items-center gap-4">
-                    <div>
-                        <p class="text-lg sm:text-xl font-medium">Fuentes transparentes</p>
+                <div class="extras-card rounded-3xl p-8">
+                    <div class="flex justify-between items-center">
+                        <p class="text-xl">Tapers personalizados</p>
+                        <p class="text-3xl font-bold text-amber-400">S/ 7 cada 50</p>
                     </div>
-                    <p class="text-2xl sm:text-3xl font-bold text-amber-400 whitespace-nowrap">S/ 3.50 c/u</p>
+                </div>
+                <div class="extras-card rounded-3xl p-8">
+                    <div class="flex justify-between items-center">
+                        <p class="text-xl">Fuentes transparentes</p>
+                        <p class="text-3xl font-bold text-amber-400">S/ 3.50 c/u</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- TESTIMONIOS -->
     <section class="py-24 bg-white">
