@@ -219,18 +219,21 @@
             </a>
         </div>
         
-        <!-- Checks: forzados a fila con flex-nowrap + gap grande + wrap suave -->
-        <div class="mt-10 flex flex-row flex-wrap justify-center items-center gap-x-8 sm:gap-x-12 gap-y-4 text-base sm:text-lg opacity-90">
-            <div class="flex items-center gap-2 whitespace-nowrap">
-                <span class="text-green-400 text-2xl">✔</span> Lo mejor de lo mejor
-            </div>
-            <div class="flex items-center gap-2 whitespace-nowrap">
-                <span class="text-green-400 text-2xl">✔</span> Entrega a domicilio
-            </div>
-            <div class="flex items-center gap-2 whitespace-nowrap">
-                <span class="text-green-400 text-2xl">✔</span> Personalizados
-            </div>
-        </div>
+        <!-- Checks forzados a una sola línea horizontal -->
+<div class="mt-10 flex justify-center items-center gap-5 sm:gap-8 text-base sm:text-lg opacity-90 flex-nowrap overflow-hidden">
+    <div class="flex items-center gap-2 whitespace-nowrap min-w-0">
+        <span class="text-green-400 text-xl sm:text-2xl">✔</span> 
+        <span class="text-sm sm:text-base">Lo mejor</span>
+    </div>
+    <div class="flex items-center gap-2 whitespace-nowrap min-w-0">
+        <span class="text-green-400 text-xl sm:text-2xl">✔</span> 
+        <span class="text-sm sm:text-base">Entrega a domicilio</span>
+    </div>
+    <div class="flex items-center gap-2 whitespace-nowrap min-w-0">
+        <span class="text-green-400 text-xl sm:text-2xl">✔</span> 
+        <span class="text-sm sm:text-base">Personalizados</span>
+    </div>
+</div>
     </div>
     
     <!-- DESLIZA - muy abajo y discreto -->
