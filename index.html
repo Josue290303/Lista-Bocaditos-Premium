@@ -191,56 +191,56 @@
         </div>
     </nav>
 
-    <!-- HERO - Versión corregida -->
-    <header class="hero-bg min-h-screen flex items-center text-white relative">
-        <div class="max-w-5xl mx-auto px-5 sm:px-6 text-center py-20 sm:py-24">
-            <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-5 py-2 rounded-3xl mb-8">
-                <span class="text-amber-300">★</span>
-                <span class="text-sm font-medium tracking-widest">TARAPOTO • PERÚ</span>
-            </div>
-            
-            <h1 class="heading-font text-5xl sm:text-6xl md:text-7xl font-bold tracking-tighter leading-tight mb-6">
-                Bocaditos &amp;<br>Buffet Premium
-            </h1>
-            <p class="text-xl sm:text-2xl md:text-3xl opacity-90 mb-4">Sabores que enamoran</p>
-            <p class="text-lg sm:text-xl opacity-80 max-w-lg mx-auto mb-10">
-                By Helga López • Hechos con amor para tus momentos especiales
-            </p>
-            
-            <div class="flex flex-col sm:flex-row gap-5 justify-center items-center mt-8">
-                <a href="#dulces"
-                   class="bg-white text-gray-900 hover:bg-amber-50 font-semibold text-lg px-10 py-5 rounded-3xl transition shadow-lg w-full sm:w-auto">
-                    Ver nuestro catálogo
-                </a>
-                <a href="https://wa.me/51907444411?text=%C2%A1Hola%20Sra.%20Helga!%20Deseo%20información%20sobre%20bocaditos"
-                   target="_blank"
-                   class="border-2 border-white hover:bg-white hover:text-gray-900 font-semibold text-lg px-10 py-5 rounded-3xl transition w-full sm:w-auto">
-                    Reservar ahora
-                </a>
-            </div>
-            
-            <!-- Checks en fila con wrap suave -->
-            <div class="mt-12 flex flex-wrap justify-center gap-x-6 sm:gap-x-10 gap-y-3 text-base sm:text-lg opacity-90 max-w-3xl mx-auto">
-                <div class="flex items-center gap-2 whitespace-nowrap">
-                    <span class="text-green-400 text-2xl">✔</span> Lo mejor de lo mejor
-                </div>
-                <div class="flex items-center gap-2 whitespace-nowrap">
-                    <span class="text-green-400 text-2xl">✔</span> Entrega a domicilio
-                </div>
-                <div class="flex items-center gap-2 whitespace-nowrap">
-                    <span class="text-green-400 text-2xl">✔</span> Personalizados
-                </div>
-            </div>
+<!-- HERO - Versión corregida para que los checks queden en fila -->
+<header class="hero-bg min-h-screen flex items-center text-white relative">
+    <div class="max-w-5xl mx-auto px-5 sm:px-6 text-center py-20 sm:py-32">
+        <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-5 py-2 rounded-3xl mb-8">
+            <span class="text-amber-300">★</span>
+            <span class="text-sm font-medium tracking-widest">TARAPOTO • PERÚ</span>
         </div>
         
-        <!-- Indicador de scroll -->
-        <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center opacity-60 pointer-events-none">
-            <span class="text-xs tracking-widest mb-1.5">DESLIZA</span>
-            <div class="w-5 h-8 border-2 border-white rounded-full flex items-center justify-center">
-                <div class="w-1 h-2 bg-white rounded-full animate-bounce"></div>
+        <h1 class="heading-font text-5xl sm:text-6xl md:text-7xl font-bold tracking-tighter leading-tight mb-6">
+            Bocaditos &amp;<br>Buffet Premium
+        </h1>
+        <p class="text-xl sm:text-2xl md:text-3xl opacity-90 mb-4">Sabores que enamoran</p>
+        <p class="text-lg sm:text-xl opacity-80 max-w-lg mx-auto mb-10">
+            By Helga López • Hechos con amor para tus momentos especiales
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-5 justify-center items-center mt-8">
+            <a href="#dulces"
+               class="bg-white text-gray-900 hover:bg-amber-50 font-semibold text-lg px-10 py-5 rounded-3xl transition shadow-lg w-full sm:w-auto">
+                Ver nuestro catálogo
+            </a>
+            <a href="https://wa.me/51907444411?text=%C2%A1Hola%20Sra.%20Helga!%20Deseo%20información%20sobre%20bocaditos"
+               target="_blank"
+               class="border-2 border-white hover:bg-white hover:text-gray-900 font-semibold text-lg px-10 py-5 rounded-3xl transition w-full sm:w-auto">
+                Reservar ahora
+            </a>
+        </div>
+        
+        <!-- Checks: forzados a fila con flex-nowrap + gap grande + wrap suave -->
+        <div class="mt-10 flex flex-row flex-wrap justify-center items-center gap-x-8 sm:gap-x-12 gap-y-4 text-base sm:text-lg opacity-90">
+            <div class="flex items-center gap-2 whitespace-nowrap">
+                <span class="text-green-400 text-2xl">✔</span> Lo mejor de lo mejor
+            </div>
+            <div class="flex items-center gap-2 whitespace-nowrap">
+                <span class="text-green-400 text-2xl">✔</span> Entrega a domicilio
+            </div>
+            <div class="flex items-center gap-2 whitespace-nowrap">
+                <span class="text-green-400 text-2xl">✔</span> Personalizados
             </div>
         </div>
-    </header>
+    </div>
+    
+    <!-- DESLIZA - muy abajo y discreto -->
+    <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center opacity-60 pointer-events-none">
+        <span class="text-xs tracking-widest mb-1.5">DESLIZA</span>
+        <div class="w-5 h-8 border-2 border-white rounded-full flex items-center justify-center">
+            <div class="w-1 h-2 bg-white rounded-full animate-bounce"></div>
+        </div>
+    </div>
+</header>
 
     <!-- SERVICIOS -->
     <section id="servicios" class="max-w-7xl mx-auto px-6 py-24">
@@ -529,45 +529,55 @@
         </div>
     </section>
 
-    <!-- EXTRAS -->
-    <section id="extras" class="py-24 bg-gray-900 text-white">
-        <div class="max-w-4xl mx-auto px-6">
-            <div class="text-center mb-12">
-                <span class="text-3xl">🥤</span>
-                <h2 class="heading-font text-5xl font-bold mt-3 section-title text-white">Extras y Complementos</h2>
+<!-- EXTRAS - Versión limpia y alineada -->
+<section id="extras" class="py-20 sm:py-24 bg-gray-900 text-white">
+    <div class="max-w-5xl mx-auto px-5 sm:px-6">
+        <div class="text-center mb-12">
+            <span class="text-4xl mb-2 block">🥤</span>
+            <h2 class="heading-font text-4xl sm:text-5xl font-bold section-title">Extras y Complementos</h2>
+        </div>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
+            <div class="extras-card rounded-3xl p-6 sm:p-8">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
+                    <div>
+                        <p class="text-lg sm:text-xl font-medium">Balde de refresco</p>
+                        <p class="text-sm opacity-80">(20 L)</p>
+                    </div>
+                    <p class="text-2xl sm:text-3xl font-bold text-amber-400 whitespace-nowrap">S/ 80</p>
+                </div>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="extras-card rounded-3xl p-8">
-                    <div class="flex justify-between items-center">
-                        <p class="text-xl">Balde de refresco (10 L)</p>
-                        <p class="text-3xl font-bold text-amber-400">S/ 80</p>
+            <div class="extras-card rounded-3xl p-6 sm:p-8">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
+                    <div>
+                        <p class="text-lg sm:text-xl font-medium">Refrescos en botellitas</p>
+                        <p class="text-sm opacity-80">Chicha Morada, Cebada, Maracuya, etc.</p>
                     </div>
+                    <p class="text-2xl sm:text-3xl font-bold text-amber-400 whitespace-nowrap">S/ 2 c/u</p>
                 </div>
-                <div class="extras-card rounded-3xl p-8">
-                    <div class="flex justify-between items-center">
-                        <div>
-                            <p class="text-xl">Refrescos en botellitas</p>
-                            <p class="text-sm opacity-70">Coca, Inka, Sprite, etc.</p>
-                        </div>
-                        <p class="text-3xl font-bold text-amber-400">S/ 2 c/u</p>
+            </div>
+            
+            <div class="extras-card rounded-3xl p-6 sm:p-8">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
+                    <div>
+                        <p class="text-lg sm:text-xl font-medium">Tapers personalizados</p>
                     </div>
+                    <p class="text-2xl sm:text-3xl font-bold text-amber-400 whitespace-nowrap">S/ 7 cada 50</p>
                 </div>
-                <div class="extras-card rounded-3xl p-8">
-                    <div class="flex justify-between items-center">
-                        <p class="text-xl">Tapers personalizados</p>
-                        <p class="text-3xl font-bold text-amber-400">S/ 7 cada 50</p>
+            </div>
+            
+            <div class="extras-card rounded-3xl p-6 sm:p-8">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
+                    <div>
+                        <p class="text-lg sm:text-xl font-medium">Fuentes transparentes</p>
                     </div>
-                </div>
-                <div class="extras-card rounded-3xl p-8">
-                    <div class="flex justify-between items-center">
-                        <p class="text-xl">Fuentes transparentes</p>
-                        <p class="text-3xl font-bold text-amber-400">S/ 3.50 c/u</p>
-                    </div>
+                    <p class="text-2xl sm:text-3xl font-bold text-amber-400 whitespace-nowrap">S/ 3.50 c/u</p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- TESTIMONIOS -->
     <section class="py-24 bg-white">
